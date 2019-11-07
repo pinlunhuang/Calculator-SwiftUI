@@ -21,7 +21,19 @@ struct ContentView: View {
 //            CalculatorButtonRow(row: [.digit(1), .digit(2), .digit(3), .op(.plus)])
 //            CalculatorButtonRow(row: [.digit(0), .dot, .op(.equal)])
 //        }
-        CalculatorButtonPad()
+        VStack(spacing: 12) {
+            Spacer()
+            Text("0")
+                .font(.system(size: 76))
+                .minimumScaleFactor(0.5)
+                .padding(.trailing, 24)
+                .lineLimit(1)
+                .frame(minWidth: 0,
+                       maxWidth: .infinity,
+                       alignment: .trailing)
+            CalculatorButtonPad()
+                .padding(.bottom)
+        }
     }
 }
 
