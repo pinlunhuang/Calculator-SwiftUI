@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-enum CalculatorButtonItem {
+enum CalculatorButtonItem: Hashable {
     
     enum Op: String {
         case plus = "+"
