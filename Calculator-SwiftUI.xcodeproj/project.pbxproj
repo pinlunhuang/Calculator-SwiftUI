@@ -13,6 +13,7 @@
 		E4899D62237400050038787C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4899D61237400050038787C /* Assets.xcassets */; };
 		E4899D65237400050038787C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4899D64237400050038787C /* Preview Assets.xcassets */; };
 		E4899D68237400050038787C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4899D66237400050038787C /* LaunchScreen.storyboard */; };
+		E4899D7023740E770038787C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E4899D6F23740E770038787C /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E4899D64237400050038787C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4899D67237400050038787C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4899D69237400050038787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4899D6F23740E770038787C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		E4899D4F237400030038787C = {
 			isa = PBXGroup;
 			children = (
+				E4899D6F23740E770038787C /* .gitignore */,
 				E4899D5A237400030038787C /* Calculator-SwiftUI */,
 				E4899D59237400030038787C /* Products */,
 			);
@@ -133,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4899D7023740E770038787C /* .gitignore in Resources */,
 				E4899D68237400050038787C /* LaunchScreen.storyboard in Resources */,
 				E4899D65237400050038787C /* Preview Assets.xcassets in Resources */,
 				E4899D62237400050038787C /* Assets.xcassets in Resources */,
@@ -292,7 +296,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pinlun.Calculator-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pinlun.calculator-swiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -311,7 +315,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pinlun.Calculator-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pinlun.calculator-swiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
