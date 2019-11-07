@@ -14,10 +14,11 @@
 		E4899D65237400050038787C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4899D64237400050038787C /* Preview Assets.xcassets */; };
 		E4899D68237400050038787C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4899D66237400050038787C /* LaunchScreen.storyboard */; };
 		E4899D7023740E770038787C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E4899D6F23740E770038787C /* .gitignore */; };
+		E4899D72237414080038787C /* CalculatorButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4899D71237414080038787C /* CalculatorButtonItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E4899D58237400030038787C /* Calculator-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calculator-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4899D58237400030038787C /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4899D5B237400030038787C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4899D5D237400030038787C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E4899D5F237400030038787C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,6 +27,7 @@
 		E4899D67237400050038787C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4899D69237400050038787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4899D6F23740E770038787C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E4899D71237414080038787C /* CalculatorButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,7 @@
 		E4899D59237400030038787C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4899D58237400030038787C /* Calculator-SwiftUI.app */,
+				E4899D58237400030038787C /* Calculator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +64,7 @@
 				E4899D5B237400030038787C /* AppDelegate.swift */,
 				E4899D5D237400030038787C /* SceneDelegate.swift */,
 				E4899D5F237400030038787C /* ContentView.swift */,
+				E4899D71237414080038787C /* CalculatorButtonItem.swift */,
 				E4899D61237400050038787C /* Assets.xcassets */,
 				E4899D66237400050038787C /* LaunchScreen.storyboard */,
 				E4899D69237400050038787C /* Info.plist */,
@@ -95,7 +98,7 @@
 			);
 			name = "Calculator-SwiftUI";
 			productName = "Calculator-SwiftUI";
-			productReference = E4899D58237400030038787C /* Calculator-SwiftUI.app */;
+			productReference = E4899D58237400030038787C /* Calculator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -152,6 +155,7 @@
 			files = (
 				E4899D5C237400030038787C /* AppDelegate.swift in Sources */,
 				E4899D5E237400030038787C /* SceneDelegate.swift in Sources */,
+				E4899D72237414080038787C /* CalculatorButtonItem.swift in Sources */,
 				E4899D60237400030038787C /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,7 +301,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pinlun.calculator-swiftUI";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Calculator;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -316,7 +320,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pinlun.calculator-swiftUI";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Calculator;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

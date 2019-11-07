@@ -12,41 +12,38 @@ struct ContentView: View {
     var body: some View {
         HStack {
             
-            Button(action: {
-                print("Button: +")
-            }) {
-                Text("+")
-                    .font(.system(size: 38))
-                    .foregroundColor(.white)
-                    .frame(width: 88, height: 88)
-                    .background(Color("operatorBackground"))
-                    .cornerRadius(44)
-            }
+            CalculatorButton(
+                title: "1",
+                size: CGSize(width: 88, height: 88),
+                backgroundColorName: "digitBackground")
+                {
+                    print("Button: 1")
+                }
             
-            Button(action: {
-                print("Button: +")
-            }) {
-                Text("+")
-                    .font(.system(size: 38))
-                    .foregroundColor(.white)
-                    .frame(width: 88, height: 88)
-                    .background(Color("operatorBackground"))
-                    .cornerRadius(44)
-            }
+            CalculatorButton(
+                title: "2",
+                size: CGSize(width: 88, height: 88),
+                backgroundColorName: "digitBackground")
+                {
+                    print("Button: 2")
+                }
             
-            Button(action: {
-                print("Button: +")
-            }) {
-                Text("+")
-                    .font(.system(size: 38))
-                    .foregroundColor(.white)
-                    .frame(width: 88, height: 88)
-                    .background(Color("operatorBackground"))
-                    .cornerRadius(44)
-            }
+            CalculatorButton(
+                title: "3",
+                size: CGSize(width: 88, height: 88),
+                backgroundColorName: "digitBackground")
+                {
+                    print("Button: 3")
+                }
             
-        }
-        
+            CalculatorButton(
+                title: "+",
+                size: CGSize(width: 88, height: 88),
+                backgroundColorName: "operatorBackground")
+                {
+                    print("Button: +")
+                }
+            }
     }
 }
 
