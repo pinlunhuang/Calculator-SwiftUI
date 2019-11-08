@@ -12,7 +12,7 @@ import Combine
 struct ContentView: View {
 
 //    @State private var logic: CalculatorLogic = .left(0)
-    @ObservedObject var model = CalculatorModel()
+    @EnvironmentObject var model: CalculatorModel
     @State private var editingHistory = false
     
     var body: some View {
@@ -32,7 +32,7 @@ struct ContentView: View {
                        maxWidth: .infinity,
                        alignment: .trailing)
             
-            CalculatorButtonPad(model: model)
+            CalculatorButtonPad()
                 .padding(.bottom)
         }
     }
@@ -73,7 +73,7 @@ struct CalculatorButton: View {
 struct CalculatorButtonRow: View {
 //    @Binding var logic: CalculatorLogic
     let row: [CalculatorButtonItem]
-    var model: CalculatorModel
+    @EnvironmentObject var model: CalculatorModel
     var body: some View {
         HStack {
             ForEach(row, id: \.self) { item in
@@ -92,7 +92,7 @@ struct CalculatorButtonRow: View {
 
 struct CalculatorButtonPad: View {
 //    @Binding var logic: CalculatorLogic
-    var model: CalculatorModel
+//    var model: CalculatorModel
     
     let pad: [[CalculatorButtonItem]] = [
         [.command(.clear), .command(.flip), .command(.percent), .op(.divide)],
@@ -105,7 +105,7 @@ struct CalculatorButtonPad: View {
     var body: some View {
         VStack(spacing: 8) {
             ForEach(pad, id: \.self) { row in
-                CalculatorButtonRow(row: row, model: self.model)
+                CalculatorButtonRow(row: row)
             }
         }
     }
