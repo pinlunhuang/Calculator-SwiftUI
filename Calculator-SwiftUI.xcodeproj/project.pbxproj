@@ -15,6 +15,7 @@
 		E4899D68237400050038787C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4899D66237400050038787C /* LaunchScreen.storyboard */; };
 		E4899D7023740E770038787C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E4899D6F23740E770038787C /* .gitignore */; };
 		E4899D72237414080038787C /* CalculatorButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4899D71237414080038787C /* CalculatorButtonItem.swift */; };
+		E4899D74237538AD0038787C /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4899D73237538AD0038787C /* CalculatorLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E4899D69237400050038787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4899D6F23740E770038787C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E4899D71237414080038787C /* CalculatorButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonItem.swift; sourceTree = "<group>"; };
+		E4899D73237538AD0038787C /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +48,6 @@
 			children = (
 				E4899D6F23740E770038787C /* .gitignore */,
 				E4899D5A237400030038787C /* Calculator-SwiftUI */,
-				E4899D59237400030038787C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +57,7 @@
 				E4899D58237400030038787C /* Calculator.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E4899D5A237400030038787C /* Calculator-SwiftUI */ = {
@@ -65,6 +67,8 @@
 				E4899D5D237400030038787C /* SceneDelegate.swift */,
 				E4899D5F237400030038787C /* ContentView.swift */,
 				E4899D71237414080038787C /* CalculatorButtonItem.swift */,
+				E4899D73237538AD0038787C /* CalculatorLogic.swift */,
+				E4899D59237400030038787C /* Products */,
 				E4899D61237400050038787C /* Assets.xcassets */,
 				E4899D66237400050038787C /* LaunchScreen.storyboard */,
 				E4899D69237400050038787C /* Info.plist */,
@@ -155,6 +159,7 @@
 			files = (
 				E4899D5C237400030038787C /* AppDelegate.swift in Sources */,
 				E4899D5E237400030038787C /* SceneDelegate.swift in Sources */,
+				E4899D74237538AD0038787C /* CalculatorLogic.swift in Sources */,
 				E4899D72237414080038787C /* CalculatorButtonItem.swift in Sources */,
 				E4899D60237400030038787C /* ContentView.swift in Sources */,
 			);
