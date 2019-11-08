@@ -13,10 +13,16 @@ struct ContentView: View {
 
 //    @State private var logic: CalculatorLogic = .left(0)
     @ObservedObject var model = CalculatorModel()
+    @State private var editingHistory = false
     
     var body: some View {
         VStack(spacing: 12) {
             Spacer()
+            Button("History: \(model.history.count)"){
+                self.editingHistory = true
+            }.sheet(isPresented: self.$editingHistory) {
+                HistoryView(model: self.model)
+            }
             Text(model.logic.output)
                 .font(.system(size: 76.0))
                 .minimumScaleFactor(0.5)
@@ -26,7 +32,7 @@ struct ContentView: View {
                        maxWidth: .infinity,
                        alignment: .trailing)
             
-            CalculatorButtonPad(logic: $model.logic)
+            CalculatorButtonPad(model: model)
                 .padding(.bottom)
         }
     }
@@ -65,9 +71,9 @@ struct CalculatorButton: View {
 }
 
 struct CalculatorButtonRow: View {
-    @Binding var logic: CalculatorLogic
-    
+//    @Binding var logic: CalculatorLogic
     let row: [CalculatorButtonItem]
+    var model: CalculatorModel
     var body: some View {
         HStack {
             ForEach(row, id: \.self) { item in
@@ -77,7 +83,7 @@ struct CalculatorButtonRow: View {
                 backgroundColorName: item.backgroundColorName,
                 foregroundColor: item.foregroundColor)
                 {
-                    self.logic = self.logic.apply(item: item)
+                    self.model.apply(item)
                 }
             }
         }
@@ -85,7 +91,8 @@ struct CalculatorButtonRow: View {
 }
 
 struct CalculatorButtonPad: View {
-    @Binding var logic: CalculatorLogic
+//    @Binding var logic: CalculatorLogic
+    var model: CalculatorModel
     
     let pad: [[CalculatorButtonItem]] = [
         [.command(.clear), .command(.flip), .command(.percent), .op(.divide)],
@@ -98,8 +105,33 @@ struct CalculatorButtonPad: View {
     var body: some View {
         VStack(spacing: 8) {
             ForEach(pad, id: \.self) { row in
-                CalculatorButtonRow(logic: self.$logic, row: row)
+                CalculatorButtonRow(row: row, model: self.model)
             }
         }
+    }
+}
+
+struct HistoryView: View {
+    @ObservedObject var model: CalculatorModel
+    
+    var body: some View {
+        VStack {
+            if model.totalCount == 0 {
+                Text("No History Yet")
+            } else {
+                HStack {
+                    Text("History").font(.headline)
+                    Text("\(model.historyDetail)").lineLimit(nil)
+                }
+                HStack {
+                    Text("Shown").font(.headline)
+                    Text("\(model.logic.output)")
+                }
+                Slider(
+                    value: $model.slidingIndex,
+                    in: 0...Float(model.totalCount),
+                    step: 1)
+            }
+        }.padding()
     }
 }
