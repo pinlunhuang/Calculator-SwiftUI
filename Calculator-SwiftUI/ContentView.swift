@@ -7,31 +7,26 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
-    
-    let row: [CalculatorButtonItem] = [
-        .digit(1), .digit(2), .digit(3), .op(.plus)]
+
+//    @State private var logic: CalculatorLogic = .left(0)
+    @ObservedObject var model = CalculatorModel()
     
     var body: some View {
-//        VStack(spacing: 8) {
-//            CalculatorButtonRow(row: [.command(.clear), .command(.flip), .command(.percent), .op(.divide)])
-//            CalculatorButtonRow(row: [.digit(7), .digit(8), .digit(9), .op(.multiply)])
-//            CalculatorButtonRow(row: [.digit(4), .digit(5), .digit(6), .op(.minus)])
-//            CalculatorButtonRow(row: [.digit(1), .digit(2), .digit(3), .op(.plus)])
-//            CalculatorButtonRow(row: [.digit(0), .dot, .op(.equal)])
-//        }
         VStack(spacing: 12) {
             Spacer()
-            Text("0")
-                .font(.system(size: 76))
+            Text(model.logic.output)
+                .font(.system(size: 76.0))
                 .minimumScaleFactor(0.5)
                 .padding(.trailing, 24)
                 .lineLimit(1)
                 .frame(minWidth: 0,
                        maxWidth: .infinity,
                        alignment: .trailing)
-            CalculatorButtonPad()
+            
+            CalculatorButtonPad(logic: $model.logic)
                 .padding(.bottom)
         }
     }
@@ -54,6 +49,7 @@ struct CalculatorButton: View {
     let title: String
     let size: CGSize
     let backgroundColorName: String
+    let foregroundColor: Color
     let action: () -> Void
     
     var body: some View {
@@ -69,6 +65,8 @@ struct CalculatorButton: View {
 }
 
 struct CalculatorButtonRow: View {
+    @Binding var logic: CalculatorLogic
+    
     let row: [CalculatorButtonItem]
     var body: some View {
         HStack {
@@ -76,9 +74,10 @@ struct CalculatorButtonRow: View {
                 CalculatorButton(
                 title: item.title,
                 size: item.size,
-                backgroundColorName: item.backgroundColorName)
+                backgroundColorName: item.backgroundColorName,
+                foregroundColor: item.foregroundColor)
                 {
-                    print("Button: \(item.title)")
+                    self.logic = self.logic.apply(item: item)
                 }
             }
         }
@@ -86,6 +85,8 @@ struct CalculatorButtonRow: View {
 }
 
 struct CalculatorButtonPad: View {
+    @Binding var logic: CalculatorLogic
+    
     let pad: [[CalculatorButtonItem]] = [
         [.command(.clear), .command(.flip), .command(.percent), .op(.divide)],
         [.digit(7), .digit(8), .digit(9), .op(.multiply)],
@@ -97,7 +98,7 @@ struct CalculatorButtonPad: View {
     var body: some View {
         VStack(spacing: 8) {
             ForEach(pad, id: \.self) { row in
-                CalculatorButtonRow(row: row)
+                CalculatorButtonRow(logic: self.$logic, row: row)
             }
         }
     }
